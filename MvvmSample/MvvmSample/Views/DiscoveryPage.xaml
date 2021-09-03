@@ -1,32 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MvvmSample.Views.DiscoveryPage">
+             x:Class="MvvmSample.Views.DiscoveryPage"
+             xmlns:views="clr-namespace:MvvmSample.Views">
     <Grid
         RowDefinitions="*,*"
         ColumnDefinitions="*,*"
         VerticalOptions="Center"
         Padding="20">
 
-        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="Center">
-            <Image Source="{Binding Bars.Image}" />
-            <Label Text="{Binding Bars.Title}" />
-        </StackLayout>
 
-        <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="Center">
-            <Image Source="{Binding Restaurants.Image}" />
-            <Label Text="{Binding Restaurants.Title}" />
-        </StackLayout>
 
-        <StackLayout Grid.Column="0" Grid.Row="1" HorizontalOptions="Center">
-            <Image Source="{Binding Places.Image}" />
-            <Label Text="{Binding Places.Title}" />
-        </StackLayout>
+        <views:MenuView 
+            Grid.Column="0" 
+            Grid.Row="0" 
+            BindingContext="{Binding Bars}"
+            HorizontalOptions="Center" />
 
-        <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="Center">
-            <Image Source="{Binding Offices.Image}" />
-            <Label Text="{Binding Offices.Title}" />
-        </StackLayout>
+
+        <views:MenuView 
+            Grid.Column="0" 
+            Grid.Row="1" 
+            BindingContext="{Binding Restaurants}"
+            HorizontalOptions="Center" />
+        
+        <views:MenuView 
+            Grid.Column="1" 
+            Grid.Row="0" 
+            BindingContext="{Binding Places}"
+            HorizontalOptions="Center" />
+        
+        <views:MenuView 
+            Grid.Column="1" 
+            Grid.Row="1" 
+            BindingContext="{Binding Offices}"
+            HorizontalOptions="Center" />
 
     </Grid>
 </ContentPage>
