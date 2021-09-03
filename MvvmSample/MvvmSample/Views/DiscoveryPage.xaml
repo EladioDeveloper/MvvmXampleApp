@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MvvmSample.Views.DiscoveryPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <Grid
+        RowDefinitions="*,*"
+        ColumnDefinitions="*,*"
+        VerticalOptions="Center"
+        Padding="20">
+
+        <StackLayout Grid.Column="0" Grid.Row="0" HorizontalOptions="Center">
+            <Image Source="{Binding Bars.Image}" />
+            <Label Text="{Binding Bars.Title}" />
         </StackLayout>
-    </ContentPage.Content>
+
+        <StackLayout Grid.Column="1" Grid.Row="0" HorizontalOptions="Center">
+            <Image Source="{Binding Restaurants.Image}" />
+            <Label Text="{Binding Restaurants.Title}" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="0" Grid.Row="1" HorizontalOptions="Center">
+            <Image Source="{Binding Places.Image}" />
+            <Label Text="{Binding Places.Title}" />
+        </StackLayout>
+
+        <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="Center">
+            <Image Source="{Binding Offices.Image}" />
+            <Label Text="{Binding Offices.Title}" />
+        </StackLayout>
+
+    </Grid>
 </ContentPage>
